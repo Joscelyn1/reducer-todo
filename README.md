@@ -38,7 +38,7 @@ Follow these steps for completing your project.
 - [x] Set an initial state value through a reducer and render a list of todos from that state
 - [x] Add a form that dispatches an "ADD_TODO" action to be able to add a todo item to your list
 - [x] Build a function that let's you mark todo items as completed when you click on them
-- [ ]Biuld a function that let's you clear completed todos when you click on a "Clear Completed" button
+- [x] Build a function that lets you clear completed todos when you click on a "Clear Completed" button
 
 ### STEP 1 - Build a simple reducer and initial state
 

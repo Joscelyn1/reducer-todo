@@ -28,9 +28,16 @@ export const toDoReducer = (state, action) => {
           toDo.completed = !toDo.completed;
         }
       });
+    case "REMOVE_TODO":
+      const editedToDos = [...state.toDos];
+      editedToDos.map(toDo => {
+        if (toDo.id === action.payload) {
+          editedToDos.splice(editedToDos.indexOf(toDo), 1);
+        }
+      });
       return {
         ...state,
-        toDos: changedToDos
+        toDos: editedToDos
       };
     default:
       return state;

@@ -6,6 +6,14 @@
   margin: 20px 0px;
 }
 
+.list-group-item {
+  display: flex;
+}
+
+#mytodo {
+  display: flex;
+}
+
 .list-of-todos {
   width: 500px;
   display: flex;
@@ -17,7 +25,9 @@
 }
 
 .todo {
-  margin: 10px;
+  display: flex;
+  align-items: center;
+  width: 400px;
 }
 
 .todo-input {
