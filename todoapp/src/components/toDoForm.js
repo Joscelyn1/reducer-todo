@@ -30,7 +30,7 @@ function ToDoForm(props) {
           props.dispatch({ type: "CLEAR_TODO" });
         }}
       >
-        Clear ToDos
+        Clear Completed
       </Button>
     </Form>
   );
