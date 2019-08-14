@@ -4,7 +4,6 @@ import { Button, FormInput, Form } from "shards-react";
 function ToDoForm(props) {
   const [toDo, setToDo] = useState();
   const handleChanges = e => {
-    // props.dispatch({ type: "ADD_TODO", payload: })
     setToDo(e.target.value);
   };
   return (
@@ -12,15 +11,26 @@ function ToDoForm(props) {
       <FormInput
         className="todo-input"
         type="text"
+        id="add-todo-form"
         name="newToDo"
         value={toDo}
         onChange={handleChanges}
       />
       <Button
         theme="primary"
-        onClick={() => props.dispatch({ type: "ADD_TODO", payload: toDo })}
+        onClick={() => {
+          props.dispatch({ type: "ADD_TODO", payload: toDo });
+        }}
       >
         Add ToDo
+      </Button>
+      <Button
+        theme="danger"
+        onClick={() => {
+          props.dispatch({ type: "CLEAR_TODO" });
+        }}
+      >
+        Clear ToDos
       </Button>
     </Form>
   );

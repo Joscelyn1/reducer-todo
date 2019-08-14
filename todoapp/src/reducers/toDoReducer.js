@@ -16,10 +16,21 @@ export const toDoReducer = (state, action) => {
           { toDo: action.payload, completed: false, id: Date.now() }
         ]
       };
-    case "COMPLETE_TODO":
+    case "CLEAR_TODO":
       return {
         ...state,
-        completed: !state.completed
+        toDos: state.toDos.filter(todo => !todo.completed)
+      };
+    case "COMPLETE_TODO":
+      const changedToDos = [...state.toDos];
+      changedToDos.map(toDo => {
+        if (toDo.id === action.payload) {
+          toDo.completed = !toDo.completed;
+        }
+      });
+      return {
+        ...state,
+        toDos: changedToDos
       };
     default:
       return state;

@@ -9,3 +9,7 @@
   width: 500px;
   display: flex;
 }
+
+.completed {
+  text-decoration: line-through;
+}
