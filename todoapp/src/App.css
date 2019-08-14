@@ -12,6 +12,8 @@
 
 #mytodo {
   display: flex;
+  width: 400px;
+  justify-content: center;
 }
 
 .list-of-todos {
@@ -19,6 +21,7 @@
   display: flex;
   flex-direction: column;
   margin: 10px;
+  align-items: center;
 }
 .btn {
   margin: 5px;
