@@ -10,9 +10,9 @@ const ListOfToDos = props => {
   // useReducer - takes in a reducer, and an initialState obj
   // returns - a state obj, and the dispatch fn
   return (
-    <div>
+    <div className="list-of-todos">
       {props.state.toDos.map(thing => (
-        <ListGroup className="list-of-todos">
+        <ListGroup className="todo">
           <ToDo
             dispatch={props.dispatch}
             toDos={props.state.toDos}
