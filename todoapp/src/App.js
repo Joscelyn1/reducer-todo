@@ -1,25 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useReducer } from "react";
+import ListOfToDos from "./components/ListOfToDos.js";
+import "./App.css";
+import { Container } from "shards-react";
+import { initialState, toDoReducer } from "./reducers/toDoReducer.js";
+import ToDoForm from "./components/ToDoForm.js";
 
 function App() {
+  const [state, dispatch] = useReducer(toDoReducer, initialState);
+
+  /*  toDo: ["take out the trash", "make bed", "finish book"],
+  editing: false*/
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container className="App">
+      <h1>To Do List</h1>
+      <ListOfToDos dispatch={dispatch} state={state} />
+      <ToDoForm dispatch={dispatch} />
+    </Container>
   );
 }
 

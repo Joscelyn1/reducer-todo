@@ -1,51 +1,25 @@
 import React, { useState, useReducer } from "react";
-import Icon from "@material-ui/core/Icon";
-import { initialState, toDoReducer } from "../reducers/titleReducer";
+import { ListGroup } from "shards-react";
+import ToDo from "./ToDo.js";
+import ToDoForm from "./ToDoForm.js";
 // actions -
 // TOGGLE_EDITING
 // UPDATE_TODO
 
-const ListOfToDos = () => {
-  const [newToDoText, setNewToDoText] = useState();
-
+const ListOfToDos = props => {
   // useReducer - takes in a reducer, and an initialState obj
   // returns - a state obj, and the dispatch fn
-  const [state, dispatch] = useReducer(titleReducer, initialState);
-
-  const handleChanges = e => {
-    setNewToDoText(e.target.value);
-  };
-
   return (
     <div>
-      {!state.editing ? (
-        <h1>
-          {state.toDo}{" "}
-          <i
-            onClick={() => dispatch({ type: "TOGGLE_EDITING" })}
-            class="material-icons"
-          >
-            edit
-          </i>
-        </h1>
-      ) : (
-        <div>
-          <input
-            className="title-input"
-            type="text"
-            name="newTitleText"
-            value={newTitleText}
-            onChange={handleChanges}
+      {props.state.toDos.map(thing => (
+        <ListGroup className="list-of-todos">
+          <ToDo
+            dispatch={props.dispatch}
+            toDos={props.state.toDos}
+            toDo={thing}
           />
-          <button
-            onClick={() =>
-              dispatch({ type: "UPDATE_TODO", payload: newToDoText })
-            }
-          >
-            Update title
-          </button>
-        </div>
-      )}
+        </ListGroup>
+      ))}
     </div>
   );
 };
