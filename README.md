@@ -22,9 +22,9 @@ In this project, you build an app that let's you display a todo list from reduce
 - [x] CD into the project base directory `cd reducer-todo`
 - [x] Create a new react app using CRA
 - [ ] Using the same command tool (yarn or npm) start up the app using `yarn start` or `npm start`
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
-- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-- [ ] Push commits: git push origin `<firstName-lastName>`.
+- [x] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [x] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
+- [x] Push commits: git push origin `<firstName-lastName>`.
 
 Follow these steps for completing your project.
 
@@ -35,10 +35,10 @@ Follow these steps for completing your project.
 
 ## Minimum Viable Product
 
-1. Set an initial state value through a reducer and render a list of todos from that state
-1. Add a form that dispatches an "ADD_TODO" action to be able to add a todo item to your list
-1. Build a function that let's you mark todo items as completed when you click on them
-1. Biuld a function that let's you clear completed todos when you click on a "Clear Completed" button
+- [x] Set an initial state value through a reducer and render a list of todos from that state
+- [x] Add a form that dispatches an "ADD_TODO" action to be able to add a todo item to your list
+- [x] Build a function that let's you mark todo items as completed when you click on them
+- [x] Build a function that lets you clear completed todos when you click on a "Clear Completed" button
 
 ### STEP 1 - Build a simple reducer and initial state
 
@@ -52,10 +52,6 @@ Follow these steps for completing your project.
   id: 3892987589
 }
 ```
-
-- Export both the reducer and the initial state object
-
-### STEP 2 - Set up state in your component
 
 You get to choose how you want to set up your components. Please don't just do this all inside App. I know it is a small and simple project, but you will do yourself a great service by setting your app up as if it were going to be a larger application
 
